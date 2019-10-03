@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FilePond from CDN</title>
+
+  <!-- Filepond stylesheet -->
+  <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="jumbotron text-center"><h1>Upload a file, please.</h1></div>
+
+  <!-- We'll transform this input into a pond -->
+  <div class="container">
+  <input type="file" class="filepond">
+  <button id="back" class="btn btn-primary">go back</button>
+</div>
+    
+
+  <!-- Load FilePond library -->
+  <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+
+  <!-- Turn all file input elements into ponds -->
+  <script>
+  FilePond.parse(document.body);
+  FilePond.setOptions({
+    server: 'http://127.0.0.1:5500/' //a server 
+});
+  </script>
+
+  <script>
+   document.getElementById('back').addEventListener('click', e => {
+    window.history.back()});</script>
+  
+
+</body>
+</html>

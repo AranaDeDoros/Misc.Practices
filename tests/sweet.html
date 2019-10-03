@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <title>Sweet Alert</title>
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+
+
+        <button id="pop" class="btn btn-primary">pop</button>
+        <button id="back" class="btn btn-primary">go back</button>
+    </div>
+
+    <script>
+        const Swal = SweetAlert;
+
+        document.getElementById('pop').addEventListener('click', (e) => {
+            Swal.fire({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+                footer: '<a href>Why do I have this issue?</a>'
+            });
+            e.stopPropagation();
+        });
+
+    </script>
+
+    <script>
+        document.getElementById('back').addEventListener('click', e => {
+            window.history.back()
+        });</script>
+</body>
+
+</html>

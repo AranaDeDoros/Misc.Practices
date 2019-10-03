@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/driver.js/dist/driver.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/driver.js/dist/driver.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Driver.js</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <div id="some-element"><span>watch out</span></div>
+        <div><span>not this</span></div>
+    </div>
+
+    <button id="highlight" class="btn btn-primary">Highlight</button>
+
+    <button id="back" class="btn btn-primary">go back</button>
+
+    <script>
+ const driver = new Driver();
+
+        document.getElementById('highlight').addEventListener('click', e =>{
+            driver.highlight({
+  element: '#some-element',
+  popover: {
+    title: 'Title for the Popover',
+    description: 'Description for it',
+  }
+});
+            e.stopPropagation()
+        });
+    </script>
+
+<script>
+        document.getElementById('back').addEventListener('click', e => {
+         window.history.back()});</script>
+    
+</body>
+</html>
