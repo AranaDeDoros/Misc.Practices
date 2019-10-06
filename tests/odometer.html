@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Odometer</title>
+
+
+  
+<!-- Odometr includes -->
+<link rel="stylesheet" href="http://github.hubspot.com/odometer/themes/odometer-theme-car.css" />
+<script src="http://github.hubspot.com/odometer/odometer.js"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+<!-- Extra styles for this example -->
+<style>
+    .odometer {
+        font-size: 100px;
+    }
+</style>
+
+    <div class="jumbotron text-center">
+        <div id="odometer" class="odometer">123</div>
+
+    </div>
+    
+  <button id="back" class="btn btn-primary">go back</button>
+</div>
+    
+
+
+  <script>
+
+setTimeout(function(){
+    odometer.innerHTML = 456;
+}, 10000);
+
+   document.getElementById('back').addEventListener('click', e => {
+    window.history.back()});</script>
+  
+
+</body>
+</html>
